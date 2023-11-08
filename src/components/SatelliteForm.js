@@ -118,7 +118,7 @@ function SatelliteForm() {
         <label>
           Mass:
           <input
-            type="numder"
+            type="text"
             placeholder='insert mass eg.13 '
             name="mass"
             value={formData.mass}
@@ -148,7 +148,7 @@ function SatelliteForm() {
         <label>
           Image:
           <input
-            type="url"
+            type="text"
             placeholder='image url eg. https://space.skyrocket.de/img_sat/seeds__1.jpg'
             name="image"
             value={formData.image}
