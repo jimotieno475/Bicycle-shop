@@ -5,36 +5,83 @@ import SatelliteCollection from './SatelliteCollection';
 import SingleSatellite from './SingleSatellite';
 import SatelliteForm from './SatelliteForm';
 import SearchSatellite from './SearchSatellite';
-
+import axios from 'axios'; 
+import Home from './Home';
 function App() {
   const [satellites, setSatellites] = useState([]);
+  const[page,setPage]=useState(1)
+  const[limit,setLimit]=useState(10)
 
-  useEffect(() => {
-    // Fetch satellite data and set it using the useState hook
-    fetch("http://localhost:3000/satellites")
-    .then((res)=>res.json())
-    .then((satellites)=>{setSatellites(satellites)})
-  }, []);
+  function changeLimit(l){
+    console.log("change limit")
+    setLimit(l);
+    setPage(1);
+    getSatellites(1,l)
+  }
+   function handleNext(){
+    getSatellites(page+1,limit);
+    setPage(page+1);
+   }
+   function hanleBack (){
+    if(page===1){
+      return;
+    }
+    getSatellites(page-1,limit);
+    setPage(page-1);
+   }
+
+   function getSatellites(page=1,limit=10){
+    axios({
+      method:"GET",
+      url:"http://localhost:3000/satellites",
+      params:{
+        _page: page,
+        _limit: limit,
+      }
+    })
+    .then((res)=>{
+      console.log(res)
+      setSatellites(res.data)
+    })
+    .catch((e) => {});
+   }
+   useEffect(()=>{
+    getSatellites(page,limit)
+   },[page,limit])
 
   function handleDeleteSatellite(deletedSatellite) {
-    const updatedItems = satellites.filter((satellite) => satellite.id !== deletedSatellite.id);
-    setSatellites(updatedItems);
+    const deleted=satellites.filter((satellite)=>
+      satellite.id !== deletedSatellite.id
+    )
+    // setSatellites(satellites.filter((satellite) => satellite.id !== deletedSatellite.id));
+    setSatellites(deleted)
   }
   
 
   return (
-    <Router>
-      <div>
+      
+    <Router >
+      <div >
         <Navbar/>
         <Routes>
-          <Route path="/collection" element={<SatelliteCollection satellites={satellites} handleDeleteSatellite={handleDeleteSatellite}/>} />
+          <Route exact path="/home" element={<Home />} />
+          <Route path="/collection" element={<SatelliteCollection
+           satellites={satellites} 
+           handleDeleteSatellite={handleDeleteSatellite}
+           changeLimit={changeLimit}
+           handleNext={handleNext}
+           handleBack={hanleBack}
+           page={page}
+           limit={limit}
+           
+           />} />
           <Route path="/collection/:satelliteId" element={<SingleSatellite />} />
           <Route path="/form" element={<SatelliteForm />} />
           <Route path="/search" element={<SearchSatellite satellites={satellites}/>} />
         </Routes>
       </div>
     </Router>
-  );
+ );
 }
 
 

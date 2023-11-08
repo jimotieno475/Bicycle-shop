@@ -30,6 +30,7 @@ function SingleSatellite() {
   return (
     <div id='satellite'>
       <h1>Satellite Details</h1>
+      <div id='single' >
       {satellites.length > 0 ? (
         <div>
           <img src={satellites[0].image} alt={satellites[0].id} />
@@ -38,12 +39,13 @@ function SingleSatellite() {
           <p>LauncheDate: {satellites[0].launch_date}</p>
           <p>Mass: {satellites[0].mass}</p>
           <p>Launcher: {satellites[0].launcher}</p>
-          <button onClick={handlelike}> likes:{like}</button>
+          <button onClick={handlelike}> likes </button> <span>{like}</span>
 
         </div>
       ) : (
         <p>Loading...</p>
       )}
+       </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 // import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function SatelliteCollection({satellites,handleDeleteSatellite}) {
+function SatelliteCollection({satellites,handleDeleteSatellite,changeLimit,handleNext,handleBack,page,limit}) {
+  
   function handleDeleteClick(satellite) {
     // Send a DELETE request to the server to delete the satellite
     fetch(`http://localhost:3000/satellites/${satellite.id}`, {
@@ -24,16 +25,28 @@ function SatelliteCollection({satellites,handleDeleteSatellite}) {
   return (
     <div id='collection'>
       <h1>Satellite Collection</h1>
-      <ul>
+      <ul id='satellites'>
         {satellites.map((satellite) => (
           <li key={satellite.id}>
             <Link to={`/collection/${satellite.id}`}>
               <img src={satellite.image} alt={satellite.name} />
             </Link>
-            <button onClick={() => handleDeleteClick(satellite.id)}>Delete</button>
+            <button onClick={() => handleDeleteClick(satellite)}>Delete</button>
           </li>
         ))}
       </ul>
+      <div>
+        <button onClick={handleBack}>Back</button>
+        <button>{page}</button>
+        <button onClick={handleNext}>Next</button>
+
+        <select value={limit} onChange={(e) => changeLimit(e.target.value)}>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+        </select>
+      </div>
     </div>
   );
 }

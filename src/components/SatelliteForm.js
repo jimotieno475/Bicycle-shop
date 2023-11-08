@@ -99,7 +99,8 @@ function SatelliteForm() {
           Satellite ID:
           <input
             type="text"
-            name="id"
+            placeholder='insert ID eg. VELOX-II'
+            id="id"
             value={formData.id}
             onChange={(e) => setFormData({ ...formData, id: e.target.value })}
           />
@@ -108,6 +109,7 @@ function SatelliteForm() {
           Country:
           <input
             type="text"
+            placeholder='insert country eg. Kenya'
             name="country"
             value={formData.country}
             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
@@ -116,7 +118,8 @@ function SatelliteForm() {
         <label>
           Mass:
           <input
-            type="text"
+            type="numder"
+            placeholder='insert mass eg.13 '
             name="mass"
             value={formData.mass}
             onChange={(e) => setFormData({ ...formData, mass: e.target.value })}
@@ -126,6 +129,7 @@ function SatelliteForm() {
           Launcher:
           <input
             type="text"
+            placeholder='insert launcher eg. PSLV-C2'
             name="launcher"
             value={formData.launcher}
             onChange={(e) => setFormData({ ...formData, launcher: e.target.value })}
@@ -135,6 +139,7 @@ function SatelliteForm() {
           LauncherDate:
           <input
             type="text"
+            placeholder='insert date in format dd/mm/yy'
             name="launcher_date"
             value={formData.launch_date}
             onChange={(e) => setFormData({ ...formData, launch_date: e.target.value })}
@@ -143,7 +148,8 @@ function SatelliteForm() {
         <label>
           Image:
           <input
-            type="text"
+            type="url"
+            placeholder='image url eg. https://space.skyrocket.de/img_sat/seeds__1.jpg'
             name="image"
             value={formData.image}
             onChange={(e) => setFormData({ ...formData, image: e.target.value })}
