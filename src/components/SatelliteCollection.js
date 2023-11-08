@@ -27,12 +27,12 @@ function SatelliteCollection({satellites,handleDeleteSatellite,changeLimit,handl
       <h1>Satellite Collection</h1>
       <ul id='satellites'>
         {satellites.map((satellite) => (
-          <li key={satellite.id}>
+          <div key={satellite.id}>
             <Link to={`/collection/${satellite.id}`}>
               <img src={satellite.image} alt={satellite.name} />
             </Link>
             <button onClick={() => handleDeleteClick(satellite)}>Delete</button>
-          </li>
+          </div>
         ))}
       </ul>
       <div>
