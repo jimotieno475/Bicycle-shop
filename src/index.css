@@ -25,13 +25,13 @@ code {
   
 }
 
-/* #single img {
+#single img {
   border-radius: 10px;
   width: 300px;
   height: 300px;
   object-fit: cover;
 }
-input[type=text] {
+/* input[type=text] {
   background-color: white;
   background: url('/home/jim/Downloads/8666693_search_icon.svg' ); 
   background-position: 10px 10px;
