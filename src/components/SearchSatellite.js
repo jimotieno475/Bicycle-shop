@@ -10,6 +10,8 @@ const SearchSatellite = ({ satellites }) => {
   return (
     <div>
       <h2>Search Satellite</h2>
+      <p>You can view only satelites in the current page in the Satellite Collection</p>
+      <p>If you want to see other satelites navigate to the next page in the Satellite Collection</p>
       <input
         type="text"
         placeholder="Search by id"
