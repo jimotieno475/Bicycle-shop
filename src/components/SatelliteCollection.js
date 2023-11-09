@@ -35,17 +35,17 @@ function SatelliteCollection({satellites,handleDeleteSatellite,changeLimit,handl
           </div>
         ))}
       </ul>
-      <div>
+      <div>(
         <button onClick={handleBack}>Back</button>
         <button>{page}</button>
-        <button onClick={handleNext}>Next</button>
+        <button onClick={handleNext}>Next</button>:
 
         <select id='selection' value={limit} onChange={(e) => changeLimit(e.target.value) }>
           <option>10</option>
           <option>15</option>
           <option>20</option>
           <option>25</option>
-        </select>
+        </select>)
       </div>
     </div>
   );

@@ -1,12 +1,13 @@
 import React,{useEffect,useState} from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,Navigate} from 'react-router-dom';
 import Navbar from './NavBar';
 import SatelliteCollection from './SatelliteCollection';
 import SingleSatellite from './SingleSatellite';
 import SatelliteForm from './SatelliteForm';
 import SearchSatellite from './SearchSatellite';
 import axios from 'axios'; 
-import Home from './Home';
+import LandingPage from './Home';
+import Footer from './Footer';
 function App() {
   const [satellites, setSatellites] = useState([]);
   const[page,setPage]=useState(1)
@@ -59,12 +60,16 @@ function App() {
   
 
   return (
-      
+      <div>
     <Router >
       <div >
+       
         <Navbar/>
         <Routes>
-          <Route exact path="/home" element={<Home />} />
+        <Route
+              path="/"
+              element={<Navigate to="/home" />}/>
+           <Route exact path="/home" element={<LandingPage />} />
           <Route path="/collection" element={<SatelliteCollection
            satellites={satellites} 
            handleDeleteSatellite={handleDeleteSatellite}
@@ -79,8 +84,10 @@ function App() {
           <Route path="/form" element={<SatelliteForm />} />
           <Route path="/search" element={<SearchSatellite satellites={satellites}/>} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
+    </div>
  );
 }
 

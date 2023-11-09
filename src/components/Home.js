@@ -1,8 +1,8 @@
 import React from 'react'
- function Home() {
+ function LandingPage() {
   return (
     <div id='home'> welcome To the satelite world</div>
   )
 }
 
-export default Home;
+export default LandingPage;
