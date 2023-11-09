@@ -407,14 +407,6 @@
       "mass": "3.4",
       "launcher": "PSLV-C29",
       "image": "https://sky-brokers.com/wp-content/uploads/2022/01/NUS-Galassia-CubeSat-in-orbit.jpg"
-    },
-    {
-      "id": "Athenoxat-I",
-      "country": "SINGAPORE",
-      "launch_date": "16-12-2015",
-      "mass": "",
-      "launcher": "PSLV-C29",
-      "image": "https://www.micro-space.org/images/athenoxatcad.jpg"
     }
   ]
 }
