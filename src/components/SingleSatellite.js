@@ -39,7 +39,7 @@ function SingleSatellite() {
           <p>LauncheDate: {satellites[0].launch_date}</p>
           <p>Mass: {satellites[0].mass}</p>
           <p>Launcher: {satellites[0].launcher}</p>
-          <button onClick={handlelike}> likes </button> <span>{like}</span>
+          <button onClick={handlelike}> Like </button> <span style={{color:"goldenrod"}}>{like} <span style={{color:"black"}}>likes</span>  </span>
 
         </div>
       ) : (

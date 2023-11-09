@@ -125,8 +125,9 @@ input[type=submit]:hover {
   transform: translateY(4px)
 }
 
-#collection{
-  background-color: 
+#athere{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 
 body {
@@ -137,6 +138,7 @@ body {
   background-size: 100% 100%;
   color: #1a0f49;
   padding-top: 60px;
+  padding-bottom: 120px;
 }
 #selection{
   background-color: #1a0f49;
@@ -203,8 +205,8 @@ body {
    background-color: red; 
   color: white;
   text-align: center;
-  font-size: 5px;
- padding: 20px;
+  font-size: 10px;
+ padding: 10px 0;
 }
  #navs {
   position: fixed;
@@ -238,4 +240,19 @@ body {
   width: 200px;
   height: 300px;
   object-fit: cover;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:darkorange; /* Set the color of the text */
+  font-size: 10px; /* Set the font size of the text */
+  font-weight: bold; /* Set the font weight of the text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
 }

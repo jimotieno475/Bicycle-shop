@@ -29,23 +29,30 @@ function SatelliteCollection({satellites,handleDeleteSatellite,changeLimit,handl
         {satellites.map((satellite) => (
           <div key={satellite.id}>
             <Link to={`/collection/${satellite.id}`}>
-              <img src={satellite.image} alt={satellite.name} />
+              <div className='image-container'>
+                 <img src={satellite.image} alt={satellite.name} />
+                 <div className="image-text">
+                  click for satelite info
+                 </div>
+              </div>
+             
             </Link>
             <button onClick={() => handleDeleteClick(satellite)}>Delete</button>
           </div>
         ))}
       </ul>
-      <div>(
+      <div>
         <button onClick={handleBack}>Back</button>
         <button>{page}</button>
-        <button onClick={handleNext}>Next</button>:
-
+        <button onClick={handleNext}>Next</button>
+        <br/>
+        <span id='athere' style={{color:"gold"}}>Number of satelites in a page</span>
         <select id='selection' value={limit} onChange={(e) => changeLimit(e.target.value) }>
           <option>10</option>
           <option>15</option>
           <option>20</option>
           <option>25</option>
-        </select>)
+        </select>
       </div>
     </div>
   );

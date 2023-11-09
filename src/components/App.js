@@ -57,7 +57,9 @@ function App() {
     // setSatellites(satellites.filter((satellite) => satellite.id !== deletedSatellite.id));
     setSatellites(deleted)
   }
-  
+  // useEffect(() => {
+  //   window.location.href = '/home';
+  // }, []);
 
   return (
       <div>

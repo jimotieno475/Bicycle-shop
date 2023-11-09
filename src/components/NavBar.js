@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav id='navs'>
       <ul >
-      <li><Link to="/home">welcome</Link></li>
+      <li><Link to="/home">Home</Link></li>
         <li><Link to="/collection">Satellite Collection</Link></li>
         <li><Link to="/form">Add Satellite</Link></li>
         <li><Link to="/search">Search Satellite</Link></li>

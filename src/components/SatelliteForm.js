@@ -155,6 +155,7 @@ function SatelliteForm() {
             onChange={(e) => setFormData({ ...formData, image: e.target.value })}
           />
         </label>
+        
         {/* Add other form fields for mass, launcher, launch_date, image, and other satellite fields */}
         <button type="submit">Submit</button>
       </form>

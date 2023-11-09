@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SearchSatellite = ({ satellites }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +18,9 @@ const SearchSatellite = ({ satellites }) => {
       />
       <ul>
         {filteredSatellites.map((satellite, index) => (
-          <li key={index}>{satellite.id}</li>
+            <Link to={`/collection/${satellite.id}`}>
+              <li key={index}>{satellite.id}</li>
+              </Link>    
         ))}
       </ul>
     </div>
