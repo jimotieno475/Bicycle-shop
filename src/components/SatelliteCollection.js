@@ -40,7 +40,7 @@ function SatelliteCollection({satellites,handleDeleteSatellite,changeLimit,handl
         <button>{page}</button>
         <button onClick={handleNext}>Next</button>
 
-        <select value={limit} onChange={(e) => changeLimit(e.target.value)}>
+        <select id='selection' value={limit} onChange={(e) => changeLimit(e.target.value) }>
           <option>10</option>
           <option>15</option>
           <option>20</option>

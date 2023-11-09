@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
+    <nav id='navs'>
+      <ul >
       <li><Link to="/home">welcome</Link></li>
         <li><Link to="/collection">Satellite Collection</Link></li>
         <li><Link to="/form">Add Satellite</Link></li>
