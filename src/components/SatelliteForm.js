@@ -1,33 +1,4 @@
-// import React, { useState, useEffect } from 'react';
 
-// function SatelliteForm() {
-//   const [formData, setFormData] = useState({
-//     id: '',
-//     country:'',
-//     mass:'',
-//     launcher:'',
-//     launch_date:'',
-//     image: '',
-//     // Add other satellite fields
-//   });
-
-//   const handleFormSubmit = (event) => {
-//     event.preventDefault();
-//     // Send a POST request to add the new satellite to the server
-//   };
-
-//   return (
-//     <div>
-//       <h1>Add a Satellite</h1>
-//       <form onSubmit={handleFormSubmit}>
-//         {/* Form fields for satellite data */}
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default SatelliteForm;
 import React, { useState } from 'react';
 
 function SatelliteForm() {
