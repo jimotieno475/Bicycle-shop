@@ -24,7 +24,7 @@ function SatelliteForm() {
 
     // Assuming you have an API endpoint to post the new satellite data
     // Make an API call here to send the data to the server
-    fetch('http://localhost:3000/satellites', {
+    fetch('https://bysicle-colo.onrender.com/satellites', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

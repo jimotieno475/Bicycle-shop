@@ -16,7 +16,7 @@ code {
 }
 #satellites {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(2, 1fr); 
   grid-gap: 20px; 
  
 }
@@ -263,4 +263,14 @@ body {
   font-size: 10px; /* Set the font size of the text */
   font-weight: bold; /* Set the font weight of the text */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
+}
+#about{
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  /* CSS styles for screens smaller than 768px */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* CSS styles for screens between 768px and 1024px */
 }

@@ -9,7 +9,7 @@ function SingleSatellite() {
   const [satellites, setSatellites] = useState([]);
   useEffect(() => {
     // Fetch satellite details for the given satelliteId
-    const apiUrl = `http://localhost:3000/satellites/${satelliteId}`;
+    const apiUrl = `https://bysicle-colo.onrender.com/satellites/${satelliteId}`;
 
     fetch(apiUrl)
       .then((response) => response.json())

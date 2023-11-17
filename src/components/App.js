@@ -11,7 +11,7 @@ function App() {
   const [satellites, setSatellites] = useState([]);
 
 
-  useEffect (()=>{fetch("http://localhost:3000/satellites")
+  useEffect (()=>{fetch("https://bysicle-colo.onrender.com/satellites")
   .then((res)=>res.json())
   .then((data)=>{
     setSatellites(data)
