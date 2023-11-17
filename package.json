@@ -1,5 +1,5 @@
 {
-  "name": "satelite-project",
+  "name": "bysicle-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,7 +42,7 @@
   "devDependencies": {
     "json-server": "^0.17.4"
   },
-  "description": "today we will be building an app for viewing satellites ! i will be using a local API and building out the React app ,satellite React app.",
+  "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",

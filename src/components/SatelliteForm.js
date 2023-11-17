@@ -4,31 +4,22 @@ import React, { useState } from 'react';
 function SatelliteForm() {
   const [formData, setFormData] = useState({
     id: '',
-    country: '',
-    mass: '',
-    launcher: '',
-    launch_date: '',
     image: '',
-    // Add other satellite fields
+    name: '',
+    price: ''
+   
   });
-  // const [items, setItems] = useState([]);
 
-  // function handleAddItems(addedItem){
-  //     const add = [...items, addedItem]
-  //     setItems(add)
-  // }
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     // Send a POST request to add the new satellite to the server
     const newSatellite = {
       id: formData.id,
-      country: formData.country,
-      mass: formData.mass,
-      launcher: formData.launcher,
-      launch_date: formData.launch_date,
       image: formData.image,
-      // Add other satellite fields
+      name:formData.name,
+      price:formData.price
+    
     };
 
     // Assuming you have an API endpoint to post the new satellite data
@@ -53,74 +44,54 @@ function SatelliteForm() {
     // Reset the form after submission
     setFormData({
       id: '',
-      country: '',
-      mass: '',
-      launcher: '',
-      launch_date: '',
       image: '',
+      name: '',
+      price: ''
       // Reset other satellite fields as needed
     });
   };
 
   return (
     <div id='form'>
-      <h1>Add a Satellite</h1>
+      <p>Only for the owners use</p>
+      <h1>Add a Product </h1>
       <form onSubmit={handleFormSubmit}>
         <label>
-          Satellite ID:
+           ID:
           <input
             type="text"
-            placeholder='insert ID eg. VELOX-II'
+            placeholder='insert ID eg. 1'
             id="id"
             value={formData.id}
             onChange={(e) => setFormData({ ...formData, id: e.target.value })}
           />
         </label>
         <label>
-          Country:
+          Name:
           <input
             type="text"
-            placeholder='insert country eg. Kenya'
-            name="country"
-            value={formData.country}
-            onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+            placeholder='insert country eg. Mountain Bicycle'
+            name="name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </label>
+    
         <label>
-          Mass:
+          Price:Ksh
           <input
             type="text"
-            placeholder='insert mass eg.13 '
-            name="mass"
-            value={formData.mass}
-            onChange={(e) => setFormData({ ...formData, mass: e.target.value })}
-          />
-        </label>
-        <label>
-          Launcher:
-          <input
-            type="text"
-            placeholder='insert launcher eg. PSLV-C2'
-            name="launcher"
-            value={formData.launcher}
-            onChange={(e) => setFormData({ ...formData, launcher: e.target.value })}
-          />
-        </label>
-        <label>
-          LauncherDate:
-          <input
-            type="text"
-            placeholder='insert date in format dd/mm/yy'
-            name="launcher_date"
-            value={formData.launch_date}
-            onChange={(e) => setFormData({ ...formData, launch_date: e.target.value })}
+            placeholder='insert price eg. 20000'
+            name="price"
+            value={formData.price}
+            onChange={(e) => setFormData({ ...formData, price: e.target.value })}
           />
         </label>
         <label>
           Image:
           <input
             type="text"
-            placeholder='image url eg. https://space.skyrocket.de/img_sat/seeds__1.jpg'
+            placeholder='image url eg. https://lh5.googleusercontent.com/p/AF1QipOe9WtkQl-DWXISz00iXko1VoTCzwXpUMmEu2ko=w600-h988-p-k-no'
             name="image"
             value={formData.image}
             onChange={(e) => setFormData({ ...formData, image: e.target.value })}
@@ -128,7 +99,7 @@ function SatelliteForm() {
         </label>
         
         {/* Add other form fields for mass, launcher, launch_date, image, and other satellite fields */}
-        <button type="submit">Submit</button>
+        <button type="submit">Post</button>
       </form>
     </div>
   );
